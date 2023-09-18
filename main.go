@@ -3,8 +3,13 @@ package main
 import "fmt"
 
 type Personne struct {
-	name string
-}
+	Name string
+	Gang string
+	Level string
+	MaximumHP string
+	CurrentLifePoints string
+	Inventory string
+	}
 
 func main() {
 	fmt.Println("                     Start ?                 ")
