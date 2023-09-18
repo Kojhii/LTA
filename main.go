@@ -1,4 +1,4 @@
-package main 
+package main
 
 import "fmt"
 
@@ -6,13 +6,17 @@ type Personne struct {
 	name string
 }
 
-
-func main() {	fmt.Println("                     Commencer ?                 ")
-				fmt.Println("                     appuyer sur C...            ")
+func main() {
+	fmt.Println("                     Start ?                 ")
+	fmt.Println("                     Press C...           ")
+	var first string
+	fmt.Scan(&first)
+	if first == "C" {
+		startmenu()
+	}
 }
-
 
 func startmenu() {
 	fmt.Println("Personnage                         Inventaire                         Quitter ")
-	fmt.Println("(appuyer sur P )                  (appuyer sur I)                  (appuyer sur Q) ")	
+	fmt.Println("(Press P )               	    (Press C)                         (Press Q) ")
 }
