@@ -9,6 +9,10 @@ func logo() {
 	myFigure.Print()
   }
 
+func logo2() {
+	myFigure := figure.NewFigure("Virginie ", "", true)
+	myFigure.Print()
+  }
 
 
 func main() {
@@ -19,7 +23,11 @@ func main() {
 	fmt.Scan(&first)
 	if first == "Yes" || first == "yes" {
 		fmt.Print("\033[H\033[2J")
-		histoire()
+		history()
+	}
+	if first == "lukas" {
+		fmt.Print("\033[H\033[2J")
+		logo2()
 	}
 }
 

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func histoire() {
+func history() {
 	fmt.Println("                                                     Welcome to the dark world that is Little Theft Auto \n                                                     a world where you must fight to become the \n                                                     ultimate gang leader in the ruthless city of San Andreas.")
 	fmt.Println("                                                                  are you ready ?")
 	fmt.Println("                                                                  press   yes/no")
