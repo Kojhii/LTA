@@ -8,7 +8,7 @@ func history() {
 	fmt.Println("                                                                  press   yes/no")
 	var imput string
 	fmt.Scan(&imput)
-	if imput == "yes" || imput == "Yes"{
+	if imput == "yes" || imput == "Yes" {
 		fmt.Print("\033[H\033[2J")
 		choicegang()
 	}

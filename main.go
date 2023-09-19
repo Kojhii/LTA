@@ -1,19 +1,19 @@
 package main
 
-import ("fmt"
-		"github.com/common-nighthawk/go-figure")
-
+import (
+	"fmt"
+	"github.com/common-nighthawk/go-figure"
+)
 
 func logo() {
 	myFigure := figure.NewFigure("Little Theft Auto ", "", true)
 	myFigure.Print()
-  }
+}
 
 func logo2() {
 	myFigure := figure.NewFigure("Virginie ", "", true)
 	myFigure.Print()
-  }
-
+}
 
 func main() {
 	logo()
@@ -31,7 +31,6 @@ func main() {
 	}
 }
 
-
 func startmenu() {
 	fmt.Println("character Inventory Quit ")
 	fmt.Println("(Press P ) (Press C) (Press Q) ")
@@ -39,5 +38,4 @@ func startmenu() {
 	fmt.Scan(&imput)
 	if imput == "P" {
 	}
-	}
-	
+}

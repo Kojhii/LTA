@@ -1,9 +1,19 @@
 package main
 
-func CripsGang(p1 *Person) {
-	p1.Gang = "crips"
-	p1.damage = 7
-	p1.CurrentLifePoints = 10
-	p1.Level = 1
-	p1.MaxHP = 10
+type gang struct {
+	Name              string
+	Gang              string
+	Level             int
+	MaxHP             int
+	CurrentLifePoints int
+	damage            int
+}
+
+func (p *gang) Init(Name string, Gang string, MaxHP int, CurrentLifePoints int, damage int, Level int) {
+	p.Name = Name
+	p.Gang = Gang
+	p.MaxHP = MaxHP
+	p.CurrentLifePoints = CurrentLifePoints
+	p.damage = damage
+	p.Level = Level
 }
