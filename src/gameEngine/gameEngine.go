@@ -8,45 +8,21 @@ type Player struct {
 	Statpoint int
 	Gang      string
 	Damage    int
+	Inventory map[string]int
 }
 
 type Engine struct {
 	CharacterT Player
 }
 
-func (g *Player) Init() {
-	Crips := Player{
-		10,
-		10,
-		1,
-		"sam",
-		1,
-		"Crips",
-		7,
-	}
-	Bloods := Player{
-		7,
-		7,
-		1,
-		"sam",
-		1,
-		"Bloods",
-		10,
-	}
-	Latinos := Player{
-		8,
-		8,
-		1,
-		"sam",
-		1,
-		"Latinos",
-		8,
-	}
-	type ennemie struct {
-		Name   string
-		HP     int
-		MaxHP  int
-		Damage int
-		Gang   string
-	}
+func (p *Player) Init(Name string, Gang string, Level int, MaxHP int, Hp int, Damage int,Statpoint int, Inventory map[string]int) {
+    p.Name = Name
+    p.Gang = Gang
+    p.Level = Level
+    p.MaxHP = MaxHP
+    p.Hp = Hp
+	p.Damage = Damage
+	p.Statpoint = Statpoint
+	p.Inventory = Inventory
+
 }

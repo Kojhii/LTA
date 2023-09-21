@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/Kojhii/LTA/src/gameEngine"
+)
 
-func history() {
+func history(p *gameEngine.Player) {
 	fmt.Println("                                                     Welcome to the dark world that is Little Theft Auto \n                                                     a world where you must fight to become the \n                                                     ultimate gang leader in the ruthless city of San Andreas.")
 	fmt.Println("                                                                  are you ready ?")
 	fmt.Println("                                                                  press   yes/no")
@@ -10,7 +13,7 @@ func history() {
 	fmt.Scan(&imput)
 	if imput == "yes" || imput == "Yes" {
 		fmt.Print("\033[H\033[2J")
-		choicegang()
+		choicegang(p)
 	}
 	if imput == "no" {
 		fmt.Print("\033[H\033[2J")
@@ -21,7 +24,7 @@ func history() {
 		if secondimput == "yes" || secondimput == "Yes" {
 			fmt.Print("\033[H\033[2J")
 			fmt.Println("THIS IS THE GOOD SPIRIT")
-			choicegang()
+			choicegang(p)
 		}
 	}
 }
