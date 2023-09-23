@@ -9,9 +9,9 @@ func Inventory(p *gameEngine.Player) {
 	logoinventory()
 	for key, value := range p.Inventory {
 		fmt.Println("\n\n                                                                ",key,":",value)
-		fmt.Println("\n\n                                                                         ____________________                              \n                                                                         |   Back to Menu   |\n                                                                         |    (Press 1)     |   \n                                                                         |__________________| \n\n\n\n\n\n   ")
-
 	}
+	fmt.Println("\n\n                                                                         ____________________                              \n                                                                         |   Back to Menu   |\n                                                                         |    (Press 1)     |   \n                                                                         |__________________| \n\n\n\n\n\n   ")
+
 	var imput string
 	fmt.Scanln(&imput)
 	switch imput {

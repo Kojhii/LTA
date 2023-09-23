@@ -32,14 +32,33 @@ func Dealer(p *gameEngine.Player) {
 	case "2":
 		Map(p)
 	case "1":
-		Shop(p)
+		Shop(p,true)
 	}
 }
 
-func Shop(p *gameEngine.Player) {
+func Shop(p *gameEngine.Player, s bool) {
 	fmt.Print("\033[H\033[2J")
 	logoshop()
-	fmt.Println("\n\n                                                        _______________________________________________\n                                                       |  Objet   |    Price | Number to press        |\n                                                       |              ","   Level :" ,p.Level, "                  |\n                                                       |                  HP :" ,p.Hp,"|",p.MaxHP,"               | \n                                                       |                  Damage :", p.Damage, "                |\n                                                       |                  Armor :",p.Armor ,"                 |\n                                                       |                  Statpoint :",p.Statpoint,"              |\n                                                       |                  Money : ",p.Money,"                |\n                                                       |______________________________________________| \n\n ")
+	fmt.Println("\n                                                               [PRESS THE NAME OF WHAT YOU WANT]\n                                                        _______________________________________________\n                                                       |       Objet :        Price :        STOCK :  |\n                                                       |soda(give 15 Health)      20           ", p.Inventory["Soda(give 15 health)"],"    |\n                                                       |                  HP :" ,p.Hp,"|",p.MaxHP,"               | \n                                                       |                  Damage :", p.Damage, "                |\n                                                       |                  Armor :",p.Armor ,"                 |\n                                                       |                  Statpoint :",p.Statpoint,"              |\n                                                       |                  Money : ",p.Money,"                |\n                                                       |______________________________________________| \n\n ")
+	if !s {
+		fmt.Println("                                                         [You can't buy this , you need more money]")
+	}
 	fmt.Println("\n\n                                                                    _____________________                              \n                                                                    |   Go back to Map   |                             \n                                                                    |     (Press 1)      |                             \n                                                                    |____________________|                              \n\n\n\n\n\n   ")
 	
+	var imput string
+	fmt.Scan(&imput)
+
+	switch imput {
+	case "1":
+		Map(p)
+	case "soda":
+		if p.Money >= 20 {
+		p.Money -= 20
+		p.Inventory ["Soda(give 15 health)"] = p.Inventory["Soda(give 15 health)"] + 1
+		Shop(p,true)
+
+		} else {
+			Shop(p,false)
+		}
+	}
 }
