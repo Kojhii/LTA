@@ -6,24 +6,25 @@ import (
 )
 
 func history(p *gameEngine.Player) {
-	fmt.Println("                                                     Welcome to the dark world that is Little Theft Auto \n                                                     a world where you must fight to become the \n                                                     ultimate gang leader in the ruthless city of San Andreas.")
-	fmt.Println("                                                                  are you ready ?")
-	fmt.Println("                                                                  press   yes/no")
+	logo()
+	fmt.Println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                         _____________________________________________________\n                                                         |Welcome to the dark world that is Little Theft Auto |\n                                                         |                    are you ready ?                 |\n                                                         |                    press yes/no                    |\n                                                         |____________________________________________________|\n\n\n\n\n\n\n\n\n\n\n\n   ")
 	var imput string
 	fmt.Scan(&imput)
 	if imput == "yes" || imput == "Yes" {
 		fmt.Print("\033[H\033[2J")
+		logo()
 		choicegang(p)
 	}
 	if imput == "no" {
 		fmt.Print("\033[H\033[2J")
-		fmt.Println("                                                  Little bitch , you don't have choice")
-		fmt.Println("                                                          press Yes or i kill you")
+		logo()
+		fmt.Println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                          ____________________________________________________\n                                                         |          Little bitch , you don'y have choice     |\n                                                         |               Press yes or i kill you             |\n                                                         |___________________________________________________|")
 		var secondimput string
 		fmt.Scan(&secondimput)
 		if secondimput == "yes" || secondimput == "Yes" {
 			fmt.Print("\033[H\033[2J")
-			fmt.Println("THIS IS THE GOOD SPIRIT")
+			logo()
+			fmt.Println("(THIS IS THE GOOD SPIRIT, keep up)")
 			choicegang(p)
 		}
 	}

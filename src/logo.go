@@ -1,0 +1,63 @@
+package main
+
+import( 	"github.com/common-nighthawk/go-figure"
+	
+		"github.com/Kojhii/LTA/src/gameEngine"
+)
+
+
+
+func logo() {
+	myFigure := figure.NewFigure("                Little Theft Auto ", "", true)
+	myFigure.Print()
+}
+
+func logo2() {
+	myFigure := figure.NewFigure("Virginie ", "", true)
+	myFigure.Print()
+}
+func logo3() {
+	myFigure := figure.NewFigure("THANKS FOR PLAYING ", "", true)
+	myFigure.Print()
+}
+func logo4() {
+	myFigure := figure.NewFigure("THANKS FOR PLAYING ", "", true)
+	myFigure.Print()
+}
+func logocrips() {
+	myFigure := figure.NewFigure("                             CRIPS ", "", true)
+	myFigure.Print()
+}
+func logobloods() {
+	myFigure := figure.NewFigure("                           BLOODS ", "", true)
+	myFigure.Print()
+}
+func logolatinos() {
+	myFigure := figure.NewFigure("                         LATINOS ", "", true)
+	myFigure.Print()
+}
+
+func choicelogo(p *gameEngine.Player) {
+	if p.Gang == "Crips"{
+		logocrips()
+	}
+	if p.Gang == "Bloods" {
+		logobloods()
+	}
+	if p.Gang == "Latinos" {
+		logolatinos()
+	}
+}
+func logonewbie() {
+	myFigure := figure.NewFigure("                            ROOKIE ", "", true)
+	myFigure.Print()
+}
+func choicelogolevel(p *gameEngine.Player) {
+	if p.Level <5 {
+		logonewbie()
+	}
+}
+func logonstat() {
+	myFigure := figure.NewFigure("                              STAT ", "", true)
+	myFigure.Print()
+}

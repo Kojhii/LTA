@@ -60,7 +60,8 @@ func Statpoint(p *gameEngine.Player) {
 }
 
 func DisplayInfo(p *gameEngine.Player) {
-	fmt.Println("STAT ", "\nName :", p.Name, "\nGang :", p.Gang, "\nLevel :", p.Level, "\nYour base damage :", p.Damage, "\nLife :", p.Hp, "|", p.MaxHP, "\nStatpoint", p.Statpoint)
+	logonstat()
+	fmt.Println("\n\n                                                        _______________________________________________\n                                                       |              ","   Name :" ,p.Name,"                 |\n                                                       |              ","   Level :" ,p.Level, "                  |\n                                                       |                  HP :" ,p.Hp,"|",p.MaxHP,"               | \n                                                       |                  Damage :", p.Damage, "                |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |Quit    (Press 3)                             |\n                                                       |______________________________________________| \n\n ")
 	fmt.Println("                              put stat point                            Get back to menu")
 	fmt.Println("                                 (Press 1)                                 (Press 2)")
 	var imput string

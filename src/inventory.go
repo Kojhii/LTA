@@ -6,7 +6,10 @@ import (
 )
 
 func Inventory(p *gameEngine.Player) {
-	fmt.Println("Your inventory :", p.Inventory)
+	for key, value := range p.Inventory {
+		fmt.Println(value,"*",key)
+
+	}
 	fmt.Println("              Get back to menu")
 	fmt.Println("      		 (Press 1)")
 
