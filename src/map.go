@@ -7,10 +7,11 @@ import ("github.com/TheZoraiz/ascii-image-converter/aic_package"
 func Map() {
 	logo()
 	fmt.Println("\n\n ")
-	filePath := "cartelta.webp"
+	filePath := "ltatest.jpeg"
 	flags := aic_package.DefaultFlags()
-	flags.Dimensions = []int{60, 35}
-	flags.Colored = true
+	flags.Braille = true
+	flags.Dimensions = []int{170, 40}
+	flags.Colored = false
 	flags.SaveTxtPath = "."
 	flags.SaveImagePath = "."
 	flags.CustomMap = " .-=+#@"
@@ -21,4 +22,6 @@ func Map() {
 	}
 
 	fmt.Printf("%v\n", asciiArt)
+	fmt.Println("                          _____________________                    ___________________                   ___________________                    ___________________\n                          |  Commit a crime    |                   |   Go to dealer   |\n                          |     (Press 1)      |                   |    (Press 2)     |   \n                          |____________________|                   |__________________| \n\n\n\n   ")
+
 }
