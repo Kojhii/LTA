@@ -6,13 +6,12 @@ import (
 )
 
 func Inventory(p *gameEngine.Player) {
+	logoinventory()
 	for key, value := range p.Inventory {
-		fmt.Println(value,"*",key)
+		fmt.Println("\n\n                                                                ",key,":",value)
+		fmt.Println("\n\n                                                                         ____________________                              \n                                                                         |   Back to Menu   |\n                                                                         |    (Press 1)     |   \n                                                                         |__________________| \n\n\n\n\n\n   ")
 
 	}
-	fmt.Println("              Get back to menu")
-	fmt.Println("      		 (Press 1)")
-
 	var imput string
 	fmt.Scanln(&imput)
 	switch imput {

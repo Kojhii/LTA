@@ -17,11 +17,7 @@ func logo2() {
 	myFigure.Print()
 }
 func logo3() {
-	myFigure := figure.NewFigure("THANKS FOR PLAYING ", "", true)
-	myFigure.Print()
-}
-func logo4() {
-	myFigure := figure.NewFigure("THANKS FOR PLAYING ", "", true)
+	myFigure := figure.NewFigure("           THANKS FOR PLAYING ", "", true)
 	myFigure.Print()
 }
 func logocrips() {
@@ -53,11 +49,19 @@ func logonewbie() {
 	myFigure.Print()
 }
 func choicelogolevel(p *gameEngine.Player) {
-	if p.Level <5 {
+	if p.Level <= 2 {
 		logonewbie()
 	}
 }
 func logonstat() {
-	myFigure := figure.NewFigure("                              STAT ", "", true)
+	myFigure := figure.NewFigure("                               STAT ", "", true)
+	myFigure.Print()
+}
+func logostatpoint(){
+	myFigure := figure.NewFigure("                          STATPOINT ", "", true)
+	myFigure.Print()
+}
+func logoinventory(){
+	myFigure := figure.NewFigure("                          Inventory ", "", true)
 	myFigure.Print()
 }
