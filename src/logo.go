@@ -65,3 +65,7 @@ func logoinventory(){
 	myFigure := figure.NewFigure("                          Inventory ", "", true)
 	myFigure.Print()
 }
+func logoshop(){
+	myFigure := figure.NewFigure("                               SHOP", "", true)
+	myFigure.Print()
+}

@@ -2,9 +2,11 @@ package main
 
 import ("github.com/TheZoraiz/ascii-image-converter/aic_package"
 		"fmt"
+		"github.com/Kojhii/LTA/src/gameEngine"
 )
 
-func Map() {
+func Map(p *gameEngine.Player) {
+	fmt.Print("\033[H\033[2J")
 	logo()
 	fmt.Println("\n\n ")
 	filePath := "ltatest.jpeg"
@@ -22,6 +24,15 @@ func Map() {
 	}
 
 	fmt.Printf("%v\n", asciiArt)
-	fmt.Println("                          _____________________                    ___________________                   ___________________                    ___________________\n                          |  Commit a crime    |                   |   Go to dealer   |\n                          |     (Press 1)      |                   |    (Press 2)     |   \n                          |____________________|                   |__________________| \n\n\n\n   ")
+	fmt.Println("                          _____________________                    ___________________                     __________________                    __________________\n                          |  Commit a crime    |                   |   Go to dealer   |                   |    Workshop     |                    |   Go to menu    |\n                          |     (Press 1)      |                   |    (Press 2)     |                   |    (Press 3)    |                    |    (Press 4)    |   \n                          |____________________|                   |__________________|                   |_________________|                    |_________________| \n\n\n\n   ")
 
+	var imput string
+	fmt.Scan(&imput)
+
+	switch imput {
+	case "4":
+		startmenu(p)
+	case "2":
+		Dealer(p)
+	}
 }

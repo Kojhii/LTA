@@ -38,19 +38,19 @@ func choicegang(p *gameEngine.Player) {
 		case "1":
 			fmt.Print("\033[H\033[2J")
 			println("                                        [Good luck on your adventure bro  , the future of the crips's gang is in your hands]   ")
-			p.Init("Sam", "Crips", 1, 30, 30, 12, 1,10, map[string]int{"Bulletproof vest (+10 armor)" : 1})
+			p.Init("Sam", "Crips", 1, 30, 30, 12, 1,10, map[string]int{"Bulletproof vest (+10 armor)" : 1},50)
 			startmenu(p)
 
 		case "2":
 			fmt.Print("\033[H\033[2J")
 			println("                                        [Good luck on your adventure bro ,the future of the bloods's gang is in your hands]     ")
-			p.Init("Sam", "Bloods", 1, 32,32, 10, 1,10, map[string]int{ "Bulletproof vest (+10 armor) " : 1})
+			p.Init("Sam", "Bloods", 1, 32,32, 10, 1,10, map[string]int{ "Bulletproof vest (+10 armor) " : 1},50)
 			startmenu(p)
 
 		case "3":
 			fmt.Print("\033[H\033[2J")
 			println("                                        [Good luck on your adventure bro , the future of the latinos's gang is in your hands]     ")
-			p.Init("Sam", "Latinos", 1, 28, 28, 14, 1,10, map[string]int{"Bulletproof vest (+10 armor) " : 1})
+			p.Init("Sam", "Latinos", 1, 28, 28, 14, 1,10, map[string]int{"Bulletproof vest (+10 armor) " : 1},50)
 			startmenu(p)
 
 		}

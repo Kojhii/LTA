@@ -9,10 +9,10 @@ import (
 
 func main() {
 	var p gameEngine.Player
-	p.Init("sam", "zero", 0, 0, 0, 0, 0,0, map[string]int{})
+	p.Init("sam", "zero", 0, 0, 0, 0, 0,0, map[string]int{},0)
 	logo()
 	fmt.Println("                                                                             Start ?                 ")
-	fmt.Println("                                                                             Press Yes...           ")
+	fmt.Println("                                                                             Press yes...           ")
 	var first string
 	fmt.Scan(&first)
 
@@ -28,6 +28,7 @@ func main() {
 }
 
 func startmenu(p *gameEngine.Player) {
+	fmt.Print("\033[H\033[2J")
 	levelmax := 10
 	if p.Level < levelmax {
 		
@@ -55,7 +56,7 @@ func startmenu(p *gameEngine.Player) {
 		case "1":
 			fmt.Print("\033[H\033[2J")
 			fmt.Println("                         ")
-			Map()
+			Map(p)
 		}
 	} else {
 		endgame()
