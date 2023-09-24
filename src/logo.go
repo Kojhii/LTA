@@ -68,3 +68,8 @@ func logoshop() {
 	myFigure := figure.NewFigure("                                SHOP", "", true)
 	myFigure.Print()
 }
+
+func logocraft() {
+	myFigure := figure.NewFigure("                                Craft", "", true)
+	myFigure.Print()
+}

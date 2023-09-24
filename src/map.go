@@ -39,5 +39,7 @@ func Map(p *gameEngine.Player) {
 		startmenu(p)
 	case "2":
 		Dealer(p)
+	case "3":
+		Workshopmenu(p)
 	}
 }

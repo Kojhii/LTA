@@ -43,11 +43,10 @@ func Dealer(p *gameEngine.Player) {
 }
 
 func Shop(p *gameEngine.Player, nomoney bool, already bool) {
-
+	
 	fmt.Print("\033[H\033[2J")
-
 	logoshop()
-	fmt.Println("\n                                                               [PRESS THE NAME OF WHAT YOU WANT]\n                                                        _______________________________________________\n                                                       |       Objet :        Price :        STOCK :  |\n                                                       |soda(give 10 Health)      20           ", p.Inventory["soda(give 10 health)"], "    |\n                                                       |cotton                    20           ", p.Inventory["cotton"],"    |\n                                                       |vodka                     10           ", p.Inventory["vodka"],"    |\n                                                       |knife(+10 damage)         40           ", p.Inventory["Knife(+10 damage)"], "    |\n                                                       |glock(+30 damage)         100          ", p.Inventory["Glock(+30 damage)"], "    | \n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |______________________________________________| \n\n                                                                        [Money ", p.Money, "] ")
+	fmt.Println("\n                                                               [PRESS THE NAME OF WHAT YOU WANT]\n                                                        _______________________________________________\n                                                       |       Objet :        Price :        STOCK :  |\n                                                       |soda(give 10 Health)      20           ", p.Inventory["soda(give 10 health)"], "    |\n                                                       |cotton                    20           ", p.Inventory["cotton"],"    |\n                                                       |vodka                     10           ", p.Inventory["vodka"],"    |\n                                                       |knife(+10 damage)         40           ", p.Inventory["Knife(+10 damage)"], "    |\n                                                       |glock(+30 damage)         100          ", p.Inventory["Glock(+30 damage)"], "    | \n                                                       |ammo(give 20 ammo)        20           ",p.Inventory["ammo(give 20 ammo)"],"    |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |______________________________________________| \n\n                                                                        [Money ", p.Money, "] ")
 
 	if !nomoney {
 		fmt.Println("                                                         [You can't buy this , you need more money]")
@@ -111,6 +110,15 @@ func Shop(p *gameEngine.Player, nomoney bool, already bool) {
 		if p.Money >= 10 {
 			p.Money -= 10
 			p.Inventory["vodka"] = p.Inventory["vodka"] + 1
+			Shop(p, true, true)
+
+		} else {
+			Shop(p, false, true)
+		}
+	case "ammo":
+		if p.Money >= 20 {
+			p.Money -= 20
+			p.Inventory["ammo(give 20 ammo)"] = p.Inventory["ammo(give 20 ammo)"] + 1
 			Shop(p, true, true)
 
 		} else {
