@@ -1,8 +1,7 @@
 package main
 
-import 
-	"fmt"
-	
+import "fmt"
+
 func endgame() {
 	fmt.Println("Wow...you really did it bro...\n you are now the king of all the gang of the USA...")
 	logo3()

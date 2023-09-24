@@ -1,18 +1,19 @@
 package main
 
-import ("github.com/TheZoraiz/ascii-image-converter/aic_package"
-		"fmt"
-		"github.com/Kojhii/LTA/src/gameEngine"
+import (
+	"fmt"
+	"github.com/Kojhii/LTA/src/gameEngine"
+	"github.com/TheZoraiz/ascii-image-converter/aic_package"
 )
 
 func Map(p *gameEngine.Player) {
-	
+
 	fmt.Print("\033[H\033[2J")
-	
+
 	logo()
-	
+
 	fmt.Println("\n\n ")
-	
+
 	filePath := "ltatest.jpeg"
 	flags := aic_package.DefaultFlags()
 	flags.Braille = true

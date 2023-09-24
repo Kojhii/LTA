@@ -1,11 +1,10 @@
 package main
 
-import( 	"github.com/common-nighthawk/go-figure"
-	
-		"github.com/Kojhii/LTA/src/gameEngine"
+import (
+	"github.com/common-nighthawk/go-figure"
+
+	"github.com/Kojhii/LTA/src/gameEngine"
 )
-
-
 
 func logo() {
 	myFigure := figure.NewFigure("                Little Theft Auto ", "", true)
@@ -34,7 +33,7 @@ func logolatinos() {
 }
 
 func choicelogo(p *gameEngine.Player) {
-	if p.Gang == "Crips"{
+	if p.Gang == "Crips" {
 		logocrips()
 	}
 	if p.Gang == "Bloods" {
@@ -57,15 +56,15 @@ func logonstat() {
 	myFigure := figure.NewFigure("                               STAT ", "", true)
 	myFigure.Print()
 }
-func logostatpoint(){
+func logostatpoint() {
 	myFigure := figure.NewFigure("                          STATPOINT ", "", true)
 	myFigure.Print()
 }
-func logoinventory(){
+func logoinventory() {
 	myFigure := figure.NewFigure("                          Inventory ", "", true)
 	myFigure.Print()
 }
-func logoshop(){
+func logoshop() {
 	myFigure := figure.NewFigure("                                SHOP", "", true)
 	myFigure.Print()
 }

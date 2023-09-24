@@ -1,7 +1,6 @@
 package main
 
-import 
-	"fmt"
+import "fmt"
 
 func quit() {
 	fmt.Print("\033[H\033[2J")

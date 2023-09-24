@@ -12,13 +12,14 @@ type Player struct {
 	Armor int
 	Money int
 	Weapon string
+	Armorequiped string
 }
 
 type Engine struct {
 	CharacterT Player
 }
 
-func (p *Player) Init(Name string, Gang string, Level int, MaxHP int, Hp int, Damage int,Statpoint int,Armor int, Inventory map[string]int,Money int,Weapon string) {
+func (p *Player) Init(Name string, Gang string, Level int, MaxHP int, Hp int, Damage int,Statpoint int,Armor int, Inventory map[string]int,Money int,Weapon string,Armoreequiped string) {
     p.Name = Name
     p.Gang = Gang
     p.Level = Level
@@ -30,5 +31,6 @@ func (p *Player) Init(Name string, Gang string, Level int, MaxHP int, Hp int, Da
 	p.Armor = Armor
 	p.Money = Money
 	p.Weapon = Weapon
+	p.Armorequiped = Armoreequiped
 
 }

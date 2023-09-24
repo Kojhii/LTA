@@ -5,7 +5,7 @@ import (
 	"github.com/Kojhii/LTA/src/gameEngine"
 )
 
-func equipeornotknife(p *gameEngine.Player,) {
+func equipeornotknife(p *gameEngine.Player) {
 	fmt.Print("\033[H\033[2J")
 	logo()
 	fmt.Println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                         _____________________________________________________\n                                                         |                    Equip knife ?                   |\n                                                         |                    press yes/no                    |\n                                                         |____________________________________________________|\n\n\n\n\n\n\n\n\n\n\n\n   ")
@@ -16,12 +16,12 @@ func equipeornotknife(p *gameEngine.Player,) {
 	switch imput {
 	case "yes":
 		p.Weapon = "Knife(+10)"
-		Shop(p,true,true)
+		Shop(p, true, true)
 	case "no":
-		Shop(p,true,true)
+		Shop(p, true, true)
 	}
 }
-func equipeornotglock(p *gameEngine.Player,) {
+func equipeornotglock(p *gameEngine.Player) {
 	fmt.Print("\033[H\033[2J")
 	logo()
 	fmt.Println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                         _____________________________________________________\n                                                         |                    Equip glock ?                   |\n                                                         |                    press yes/no                    |\n                                                         |____________________________________________________|\n\n\n\n\n\n\n\n\n\n\n\n   ")
@@ -32,8 +32,8 @@ func equipeornotglock(p *gameEngine.Player,) {
 	switch imput {
 	case "yes":
 		p.Weapon = "Glock(+30)"
-		Shop(p,true,true)
+		Shop(p, true, true)
 	case "no":
-		Shop(p,true,true)
+		Shop(p, true, true)
 	}
 }
