@@ -24,7 +24,7 @@ func history(p *gameEngine.Player) {
 		if secondimput == "yes" || secondimput == "Yes" {
 			fmt.Print("\033[H\033[2J")
 			logo()
-			fmt.Println("(THIS IS THE GOOD SPIRIT, keep up)")
+			fmt.Println("                                                                       [THIS IS THE GOOD SPIRIT, keep up]")
 			choicegang(p)
 		}
 	}
