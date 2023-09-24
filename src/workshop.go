@@ -12,13 +12,11 @@ func Workshopmenu(p *gameEngine.Player) {
 	logo()
 
 	fmt.Println("\n\n ")
-	filePath := "garage.jpeg"
+	filePath := "4.jpeg"
 	flags := aic_package.DefaultFlags()
 	flags.Dimensions = []int{160, 35}
 	flags.Colored = true
 	flags.Braille = true
-	flags.SaveTxtPath = "."
-	flags.SaveImagePath = "."
 	flags.CustomMap = " .-=+#@"
 	flags.SaveBackgroundColor = [4]int{50, 50, 50, 100}
 	asciiArt, err := aic_package.Convert(filePath, flags)
@@ -36,25 +34,23 @@ func Workshopmenu(p *gameEngine.Player) {
 	switch imput {
 	case "2":
 		Map(p)
-	
+
 	case "1":
 		Workshop(p)
 	}
 }
 
-func Workshop(p *gameEngine.Player){
+func Workshop(p *gameEngine.Player) {
 	fmt.Print("\033[H\033[2J")
 
 	logo()
 
 	fmt.Println("\n\n ")
-	filePath := "atelier.jpeg"
+	filePath := "2.jpeg"
 	flags := aic_package.DefaultFlags()
 	flags.Dimensions = []int{160, 35}
 	flags.Colored = true
 	flags.Braille = true
-	flags.SaveTxtPath = "."
-	flags.SaveImagePath = "."
 	flags.CustomMap = " .-=+#@"
 	flags.SaveBackgroundColor = [4]int{50, 50, 50, 100}
 	asciiArt, err := aic_package.Convert(filePath, flags)
@@ -72,13 +68,34 @@ func Workshop(p *gameEngine.Player){
 	switch imput {
 	case "2":
 		Map(p)
-	
+
 	case "1":
-		Craftitem(p)
+		Craftitem(p, true)
 	}
 }
 
-func Craftitem(p *gameEngine.Player){
+func Craftitem(p *gameEngine.Player, donthavematerial bool) {
 	fmt.Print("\033[H\033[2J")
 	logocraft()
+	fmt.Println("\n                                                          [PRESS THE NAME OF WHAT YOU WANT TO CRAFT]\n                                                        _______________________________________________\n                                                       |    Objet :       Material :        STOCK :   |\n                                                       |    molotov       vodka+cotton         ", p.Inventory["molotov"], "    |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              | \n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |______________________________________________| \n\n ")
+	fmt.Println("\n\n                                                                     ___________________\n                                                                    |   Back to Menu   |\n                                                                    |    (Press 1)     |   \n                                                                    |__________________| \n\n\n   ")
+	if !donthavematerial {
+		fmt.Println("                                                         [You don't have the material required bro]")
+	}
+	var imput string
+	fmt.Scan(&imput)
+
+	switch imput {
+	case "molotov":
+		if p.Inventory["cotton"] > 0 || p.Inventory["vodka"] > 0 {
+			p.Inventory["molotov"] += 1
+			p.Inventory["cotton"] -= 1
+			p.Inventory["vodka"] -= 1
+			Craftitem(p, true)
+		} else {
+			Craftitem(p, false)
+		}
+	case "1":
+		Map(p)
+	}
 }

@@ -12,13 +12,11 @@ func Dealer(p *gameEngine.Player) {
 	logo()
 
 	fmt.Println("\n\n ")
-	filePath := "dealos.jpeg"
+	filePath := "3.jpeg"
 	flags := aic_package.DefaultFlags()
 	flags.Dimensions = []int{160, 35}
-	flags.Colored = false
+	flags.Colored = true
 	flags.Braille = true
-	flags.SaveTxtPath = "."
-	flags.SaveImagePath = "."
 	flags.CustomMap = " .-=+#@"
 	flags.SaveBackgroundColor = [4]int{50, 50, 50, 100}
 	asciiArt, err := aic_package.Convert(filePath, flags)
@@ -43,10 +41,10 @@ func Dealer(p *gameEngine.Player) {
 }
 
 func Shop(p *gameEngine.Player, nomoney bool, already bool) {
-	
+
 	fmt.Print("\033[H\033[2J")
 	logoshop()
-	fmt.Println("\n                                                               [PRESS THE NAME OF WHAT YOU WANT]\n                                                        _______________________________________________\n                                                       |       Objet :        Price :        STOCK :  |\n                                                       |soda(give 10 Health)      20           ", p.Inventory["soda(give 10 health)"], "    |\n                                                       |cotton                    20           ", p.Inventory["cotton"],"    |\n                                                       |vodka                     10           ", p.Inventory["vodka"],"    |\n                                                       |knife(+10 damage)         40           ", p.Inventory["Knife(+10 damage)"], "    |\n                                                       |glock(+30 damage)         100          ", p.Inventory["Glock(+30 damage)"], "    | \n                                                       |ammo(give 20 ammo)        20           ",p.Inventory["ammo(give 20 ammo)"],"    |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |______________________________________________| \n\n                                                                        [Money ", p.Money, "] ")
+	fmt.Println("\n                                                               [PRESS THE NAME OF WHAT YOU WANT]\n                                                        _______________________________________________\n                                                       |       Objet :        Price :        STOCK :  |\n                                                       |soda(give 10 Health)      20           ", p.Inventory["soda(give 10 health)"], "    |\n                                                       |cotton                    20           ", p.Inventory["cotton"], "    |\n                                                       |vodka                     10           ", p.Inventory["vodka"], "    |\n                                                       |knife(+10 damage)         40           ", p.Inventory["knife(+10 damage)"], "    |\n                                                       |glock(+20 damage)         100          ", p.Inventory["Glock(+20 damage)"], "    | \n                                                       |ammo(give 20 ammo)        20           ", p.Inventory["ammo(give 20 ammo)"], "    |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |______________________________________________| \n\n                                                                        [Money ", p.Money, "] ")
 
 	if !nomoney {
 		fmt.Println("                                                         [You can't buy this , you need more money]")
@@ -87,7 +85,7 @@ func Shop(p *gameEngine.Player, nomoney bool, already bool) {
 	case "glock":
 		if p.Money >= 100 {
 			p.Money -= 100
-			p.Inventory["glock(+30 damage)"] = p.Inventory["lock(+30 damage)"] + 1
+			p.Inventory["glock(+20 damage)"] = p.Inventory["lock(+20 damage)"] + 1
 			if p.Weapon != "Glock" {
 				equipeornotglock(p)
 			} else {

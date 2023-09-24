@@ -14,13 +14,11 @@ func Map(p *gameEngine.Player) {
 
 	fmt.Println("\n\n ")
 
-	filePath := "ltatest.jpeg"
+	filePath := "1.jpeg"
 	flags := aic_package.DefaultFlags()
 	flags.Braille = true
 	flags.Dimensions = []int{170, 40}
-	flags.Colored = false
-	flags.SaveTxtPath = "."
-	flags.SaveImagePath = "."
+	flags.Colored = true
 	flags.CustomMap = " .-=+#@"
 	flags.SaveBackgroundColor = [4]int{50, 50, 50, 100}
 	asciiArt, err := aic_package.Convert(filePath, flags)

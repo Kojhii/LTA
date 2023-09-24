@@ -19,6 +19,6 @@ func Inventory(p *gameEngine.Player) {
 		fmt.Print("\033[H\033[2J")
 		startmenu(p)
 	case "1":
-		equiporuse(p, true,true)
+		equiporuse(p, true, true,true)
 	}
 }

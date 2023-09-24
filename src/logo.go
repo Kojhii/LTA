@@ -70,6 +70,6 @@ func logoshop() {
 }
 
 func logocraft() {
-	myFigure := figure.NewFigure("                                Craft", "", true)
+	myFigure := figure.NewFigure("                              Craft", "", true)
 	myFigure.Print()
 }
