@@ -15,9 +15,7 @@ type Player struct {
 	Armorequiped string
 }
 
-type Engine struct {
-	CharacterT Player
-}
+
 
 func (p *Player) Init(Name string, Gang string, Level int, MaxHP int, Hp int, Damage int,Statpoint int,Armor int, Inventory map[string]int,Money int,Weapon string,Armoreequiped string) {
     p.Name = Name
@@ -33,4 +31,16 @@ func (p *Player) Init(Name string, Gang string, Level int, MaxHP int, Hp int, Da
 	p.Weapon = Weapon
 	p.Armorequiped = Armoreequiped
 
+}
+
+type Ennemy struct {
+	Hp        int
+	MaxHP     int
+	Level     int
+	Name      string
+	Damage    int
+	Inventory map[string]int
+	Armor int
+	Money int
+	
 }

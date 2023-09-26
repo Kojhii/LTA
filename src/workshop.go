@@ -6,7 +6,7 @@ import (
 	"github.com/TheZoraiz/ascii-image-converter/aic_package"
 )
 
-func Workshopmenu(p *gameEngine.Player) {
+func Workshopmenu(p *gameEngine.Player, s bool) {
 	fmt.Print("\033[H\033[2J")
 
 	logo()
@@ -28,19 +28,24 @@ func Workshopmenu(p *gameEngine.Player) {
 	fmt.Printf("%v\n", asciiArt)
 	fmt.Println("\n\n                                                _____________________                              ___________________\n                                                |       Enter        |                             |   Back to MAP    |\n                                                |     (Press 1)      |                             |    (Press 2)     |   \n                                                |____________________|                             |__________________| \n\n\n\n\n\n   ")
 
+	if s {
+		fmt.Println("                                                                           [BAD IMPUT BRO]")
+	}
 	var imput string
 	fmt.Scan(&imput)
 
 	switch imput {
 	case "2":
-		Map(p)
+		Map(p,false)
 
 	case "1":
-		Workshop(p)
+		Workshop(p,false)
+	default:
+		Workshopmenu(p,true)
 	}
 }
 
-func Workshop(p *gameEngine.Player) {
+func Workshop(p *gameEngine.Player,s bool) {
 	fmt.Print("\033[H\033[2J")
 
 	logo()
@@ -62,19 +67,25 @@ func Workshop(p *gameEngine.Player) {
 	fmt.Printf("%v\n", asciiArt)
 	fmt.Println("\n\n                                                _____________________                              ___________________\n                                                |    Craft item      |                             |   Back to MAP    |\n                                                |     (Press 1)      |                             |    (Press 2)     |   \n                                                |____________________|                             |__________________| \n\n\n\n\n\n   ")
 
+	if s {
+		fmt.Println("                                                                           [BAD IMPUT BRO]")
+	}
+
 	var imput string
 	fmt.Scan(&imput)
 
 	switch imput {
 	case "2":
-		Map(p)
+		Map(p,false)
 
 	case "1":
-		Craftitem(p, true)
+		Craftitem(p, true,false)
+	default:
+		Workshop(p,true)
 	}
 }
 
-func Craftitem(p *gameEngine.Player, donthavematerial bool) {
+func Craftitem(p *gameEngine.Player, donthavematerial bool, s bool) {
 	fmt.Print("\033[H\033[2J")
 	logocraft()
 	fmt.Println("\n                                                          [PRESS THE NAME OF WHAT YOU WANT TO CRAFT]\n                                                        _______________________________________________\n                                                       |    Objet :       Material :        STOCK :   |\n                                                       |    molotov       vodka+cotton         ", p.Inventory["molotov"], "    |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              | \n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |______________________________________________| \n\n ")
@@ -82,6 +93,10 @@ func Craftitem(p *gameEngine.Player, donthavematerial bool) {
 	if !donthavematerial {
 		fmt.Println("                                                         [You don't have the material required bro]")
 	}
+	if s {
+		fmt.Println("                                                                           [BAD IMPUT BRO]")
+	}
+
 	var imput string
 	fmt.Scan(&imput)
 
@@ -91,11 +106,13 @@ func Craftitem(p *gameEngine.Player, donthavematerial bool) {
 			p.Inventory["molotov"] += 1
 			p.Inventory["cotton"] -= 1
 			p.Inventory["vodka"] -= 1
-			Craftitem(p, true)
+			Craftitem(p, true,false)
 		} else {
-			Craftitem(p, false)
+			Craftitem(p, false,false)
 		}
 	case "1":
-		Map(p)
+		Map(p,false)
+	default:
+		Craftitem(p,true,true)
 	}
 }

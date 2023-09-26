@@ -6,13 +6,13 @@ import (
 	"github.com/TheZoraiz/ascii-image-converter/aic_package"
 )
 
-func Map(p *gameEngine.Player) {
+func Map(p *gameEngine.Player,s bool) {
 
 	fmt.Print("\033[H\033[2J")
 
 	logo()
 
-	fmt.Println("\n\n ")
+	fmt.Println("\n ")
 
 	filePath := "1.jpeg"
 	flags := aic_package.DefaultFlags()
@@ -29,15 +29,23 @@ func Map(p *gameEngine.Player) {
 	fmt.Printf("%v\n", asciiArt)
 	fmt.Println("                          _____________________                    ___________________                     __________________                    __________________\n                          |  Commit a crime    |                   |   Go to dealer   |                   |    Workshop     |                    |   Go to menu    |\n                          |     (Press 1)      |                   |    (Press 2)     |                   |    (Press 3)    |                    |    (Press 4)    |   \n                          |____________________|                   |__________________|                   |_________________|                    |_________________| \n\n\n\n   ")
 
+	if s {
+		fmt.Println("                                                                           [BAD IMPUT BRO]")
+	}
+
 	var imput string
 	fmt.Scan(&imput)
 
 	switch imput {
 	case "4":
-		startmenu(p)
+		startmenu(p,false)
 	case "2":
-		Dealer(p)
+		Dealer(p,false)
 	case "3":
-		Workshopmenu(p)
+		Workshopmenu(p,false)
+	case "1":
+		commitacrimevalidation(p,false)
+	default:
+		Map(p,true)
 	}
 }

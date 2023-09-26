@@ -61,7 +61,7 @@ func logostatpoint() {
 	myFigure.Print()
 }
 func logoinventory() {
-	myFigure := figure.NewFigure("                          Inventory ", "", true)
+	myFigure := figure.NewFigure("                       Inventory ", "", true)
 	myFigure.Print()
 }
 func logoshop() {

@@ -16,47 +16,50 @@ func main() {
 	var first string
 	fmt.Scan(&first)
 
-	if first == "Yes" || first == "yes" {
+	switch first {
+	case "lukas":
 		fmt.Print("\033[H\033[2J")
-		history(&p)
-	}
-
-	if first == "lukas" {
+		Lukas()
+	default:
 		fmt.Print("\033[H\033[2J")
-		logo2()
+		history(&p,false)
 	}
 }
 
-func startmenu(p *gameEngine.Player) {
+func startmenu(p *gameEngine.Player,s bool) {
+
 	fmt.Print("\033[H\033[2J")
 	levelmax := 10
 
 	if p.Level < levelmax {
-
 		logo()
-		fmt.Println("\n\n\n\n\n\n ")
+		fmt.Println("\n\n\n \n ")
 		choicelogo(p)
-		fmt.Println("\n\n  \n                                                       _______________________________________________\n                                                       |Map (Press 1)                                 |\n                                                       |                                              |\n                                                       |Character (Press 2)                           |\n                                                       |                                              | \n                                                       |Inventory (Press 3)                           |\n                                                       |                                              |\n                                                       |Quit    (Press 4)                             |\n                                                       |______________________________________________| \n\n ")
+		fmt.Println("\n                                                        _______________________________________________\n                                                       |Map (Press 1)                                 |\n                                                       |                                              |\n                                                       |Character (Press 2)                           |\n                                                       |                                              | \n                                                       |Inventory (Press 3)                           |\n                                                       |                                              |\n                                                       |Quit    (Press 4)                             |\n                                                       |______________________________________________| \n ")
 		choicelogolevel(p)
+		if s {
+			fmt.Println("                                                                       [BAD IMPUT BRO]")
+		}
 		var imput string
 		fmt.Scan(&imput)
-
 		switch imput {
 
 		case "3":
 			fmt.Print("\033[H\033[2J")
-			Inventory(p)
+			Inventoryentrée(p,false)
 
 		case "2":
 			fmt.Print("\033[H\033[2J")
-			DisplayInfo(p)
+			DisplayInfo(p,false)
 
 		case "4":
 			quit()
 		case "1":
 			fmt.Print("\033[H\033[2J")
 			fmt.Println("                         ")
-			Map(p)
+			Map(p,false)
+		default:
+			startmenu(p,true)
 		}
 	} else {
 		endgame()

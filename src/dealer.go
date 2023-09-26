@@ -6,7 +6,7 @@ import (
 	"github.com/TheZoraiz/ascii-image-converter/aic_package"
 )
 
-func Dealer(p *gameEngine.Player) {
+func Dealer(p *gameEngine.Player,s bool) {
 	fmt.Print("\033[H\033[2J")
 
 	logo()
@@ -29,18 +29,24 @@ func Dealer(p *gameEngine.Player) {
 
 	fmt.Println("\n\n                                                _____________________                              ___________________\n                                                |     Buy stuff      |                             |   Back to MAP    |\n                                                |     (Press 1)      |                             |    (Press 2)     |   \n                                                |____________________|                             |__________________| \n\n\n\n\n\n   ")
 
+	if s {
+		fmt.Println("                                                                           [BAD IMPUT BRO]")
+	}
+
 	var imput string
 	fmt.Scan(&imput)
 
 	switch imput {
 	case "2":
-		Map(p)
+		Map(p,false)
 	case "1":
-		Shop(p, true, true)
+		Shop(p, true, true,false)
+	default:
+		Dealer(p,true)
 	}
 }
 
-func Shop(p *gameEngine.Player, nomoney bool, already bool) {
+func Shop(p *gameEngine.Player, nomoney bool, already bool,s bool) {
 
 	fmt.Print("\033[H\033[2J")
 	logoshop()
@@ -53,74 +59,78 @@ func Shop(p *gameEngine.Player, nomoney bool, already bool) {
 		fmt.Println("                                                  [You already equip this item,why dit you buy it you dumbass ?]")
 	}
 	fmt.Println("\n\n                                                                    _____________________                              \n                                                                    |   Go back to Map   |                             \n                                                                    |     (Press 1)      |                             \n                                                                    |____________________|                              \n\n\n\n\n\n   ")
-
+	if s {
+		fmt.Println("                                                                           [BAD IMPUT BRO]")
+	}
 	var imput string
 	fmt.Scan(&imput)
 
 	switch imput {
 	case "1":
-		Map(p)
+		Map(p,false)
 	case "soda":
 		if p.Money >= 20 {
 			p.Money -= 20
 			p.Inventory["soda(give 10 health)"] = p.Inventory["soda(give 10 health)"] + 1
-			Shop(p, true, true)
+			Shop(p, true, true,false)
 
 		} else {
-			Shop(p, false, true)
+			Shop(p, false, true,false)
 		}
 	case "knife":
 		if p.Money >= 40 {
 			p.Money -= 40
 			p.Inventory["knife(+10 damage)"] = p.Inventory["knife(+10 damage)"] + 1
 			if p.Weapon != "Knife" {
-				equipeornotknife(p)
+				equipeornotknife(p,false)
 			} else {
-				Shop(p, true, false)
+				Shop(p, true, false,false)
 			}
 
 		} else {
-			Shop(p, false, true)
+			Shop(p, false, true,false)
 		}
 	case "glock":
 		if p.Money >= 100 {
 			p.Money -= 100
 			p.Inventory["glock(+20 damage)"] = p.Inventory["lock(+20 damage)"] + 1
 			if p.Weapon != "Glock" {
-				equipeornotglock(p)
+				equipeornotglock(p,false)
 			} else {
-				Shop(p, true, false)
+				Shop(p, true, false,false)
 			}
 
 		} else {
-			Shop(p, false, true)
+			Shop(p, false, true,false)
 		}
 	case "cotton":
 		if p.Money >= 20 {
 			p.Money -= 20
 			p.Inventory["cotton"] = p.Inventory["cotton"] + 1
-			Shop(p, true, true)
+			Shop(p, true, true,false)
 
 		} else {
-			Shop(p, false, true)
+			Shop(p, false, true,false)
 		}
 	case "vodka":
 		if p.Money >= 10 {
 			p.Money -= 10
 			p.Inventory["vodka"] = p.Inventory["vodka"] + 1
-			Shop(p, true, true)
+			Shop(p, true, true,false)
 
 		} else {
-			Shop(p, false, true)
+			Shop(p, false, true,false)
 		}
 	case "ammo":
 		if p.Money >= 20 {
 			p.Money -= 20
 			p.Inventory["ammo(give 20 ammo)"] = p.Inventory["ammo(give 20 ammo)"] + 1
-			Shop(p, true, true)
+			Shop(p, true, true,false)
 
 		} else {
-			Shop(p, false, true)
+			Shop(p, false, true,false)
 		}
+	default:
+		Shop(p,true,true,true)
 	}
 }
