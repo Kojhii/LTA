@@ -6,7 +6,7 @@ import (
 	"github.com/TheZoraiz/ascii-image-converter/aic_package"
 )
 
-func Dealer(p *gameEngine.Player,s bool) {
+func Dealer(p *gameEngine.Player, s bool) {
 	fmt.Print("\033[H\033[2J")
 
 	logo()
@@ -38,15 +38,15 @@ func Dealer(p *gameEngine.Player,s bool) {
 
 	switch imput {
 	case "2":
-		Map(p,false)
+		Map(p, false)
 	case "1":
-		Shop(p, true, true,false)
+		Shop(p, true, true, false)
 	default:
-		Dealer(p,true)
+		Dealer(p, true)
 	}
 }
 
-func Shop(p *gameEngine.Player, nomoney bool, already bool,s bool) {
+func Shop(p *gameEngine.Player, nomoney bool, already bool, s bool) {
 
 	fmt.Print("\033[H\033[2J")
 	logoshop()
@@ -67,70 +67,70 @@ func Shop(p *gameEngine.Player, nomoney bool, already bool,s bool) {
 
 	switch imput {
 	case "1":
-		Map(p,false)
+		Map(p, false)
 	case "soda":
 		if p.Money >= 20 {
 			p.Money -= 20
 			p.Inventory["soda(give 10 health)"] = p.Inventory["soda(give 10 health)"] + 1
-			Shop(p, true, true,false)
+			Shop(p, true, true, false)
 
 		} else {
-			Shop(p, false, true,false)
+			Shop(p, false, true, false)
 		}
 	case "knife":
 		if p.Money >= 40 {
 			p.Money -= 40
 			p.Inventory["knife(+10 damage)"] = p.Inventory["knife(+10 damage)"] + 1
 			if p.Weapon != "Knife" {
-				equipeornotknife(p,false)
+				equipeornotknife(p, false)
 			} else {
-				Shop(p, true, false,false)
+				Shop(p, true, false, false)
 			}
 
 		} else {
-			Shop(p, false, true,false)
+			Shop(p, false, true, false)
 		}
 	case "glock":
 		if p.Money >= 100 {
 			p.Money -= 100
 			p.Inventory["glock(+20 damage)"] = p.Inventory["lock(+20 damage)"] + 1
 			if p.Weapon != "Glock" {
-				equipeornotglock(p,false)
+				equipeornotglock(p, false)
 			} else {
-				Shop(p, true, false,false)
+				Shop(p, true, false, false)
 			}
 
 		} else {
-			Shop(p, false, true,false)
+			Shop(p, false, true, false)
 		}
 	case "cotton":
 		if p.Money >= 20 {
 			p.Money -= 20
 			p.Inventory["cotton"] = p.Inventory["cotton"] + 1
-			Shop(p, true, true,false)
+			Shop(p, true, true, false)
 
 		} else {
-			Shop(p, false, true,false)
+			Shop(p, false, true, false)
 		}
 	case "vodka":
 		if p.Money >= 10 {
 			p.Money -= 10
 			p.Inventory["vodka"] = p.Inventory["vodka"] + 1
-			Shop(p, true, true,false)
+			Shop(p, true, true, false)
 
 		} else {
-			Shop(p, false, true,false)
+			Shop(p, false, true, false)
 		}
 	case "ammo":
 		if p.Money >= 20 {
 			p.Money -= 20
 			p.Inventory["ammo(give 20 ammo)"] = p.Inventory["ammo(give 20 ammo)"] + 1
-			Shop(p, true, true,false)
+			Shop(p, true, true, false)
 
 		} else {
-			Shop(p, false, true,false)
+			Shop(p, false, true, false)
 		}
 	default:
-		Shop(p,true,true,true)
+		Shop(p, true, true, true)
 	}
 }

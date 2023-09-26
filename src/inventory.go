@@ -6,7 +6,7 @@ import (
 	"github.com/TheZoraiz/ascii-image-converter/aic_package"
 )
 
-func Inventoryentrée(p *gameEngine.Player,s bool) {
+func Inventoryentrée(p *gameEngine.Player, s bool) {
 	fmt.Print("\033[H\033[2J")
 
 	logo()
@@ -35,15 +35,15 @@ func Inventoryentrée(p *gameEngine.Player,s bool) {
 
 	switch imput {
 	case "2":
-		startmenu(p,false)
+		startmenu(p, false)
 
 	case "1":
-		Inventory(p,false)
+		Inventory(p, false)
 	default:
-		Inventoryentrée(p,true)
+		Inventoryentrée(p, true)
 	}
 }
-func Inventory(p *gameEngine.Player,s bool) {
+func Inventory(p *gameEngine.Player, s bool) {
 	fmt.Print("\033[H\033[2J")
 	logoinventory()
 	for key, value := range p.Inventory {
@@ -58,10 +58,10 @@ func Inventory(p *gameEngine.Player,s bool) {
 	switch imput {
 	case "2":
 		fmt.Print("\033[H\033[2J")
-		startmenu(p,false)
+		startmenu(p, false)
 	case "1":
-		equiporuse(p, true, true, true,false)
+		equiporuse(p, true, true, true, false)
 	default:
-		Inventory(p,true)
+		Inventory(p, true)
 	}
 }

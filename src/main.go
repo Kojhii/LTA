@@ -22,11 +22,11 @@ func main() {
 		Lukas()
 	default:
 		fmt.Print("\033[H\033[2J")
-		history(&p,false)
+		history(&p, false)
 	}
 }
 
-func startmenu(p *gameEngine.Player,s bool) {
+func startmenu(p *gameEngine.Player, s bool) {
 
 	fmt.Print("\033[H\033[2J")
 	levelmax := 10
@@ -46,20 +46,20 @@ func startmenu(p *gameEngine.Player,s bool) {
 
 		case "3":
 			fmt.Print("\033[H\033[2J")
-			Inventoryentrée(p,false)
+			Inventoryentrée(p, false)
 
 		case "2":
 			fmt.Print("\033[H\033[2J")
-			DisplayInfo(p,false)
+			DisplayInfo(p, false)
 
 		case "4":
 			quit()
 		case "1":
 			fmt.Print("\033[H\033[2J")
 			fmt.Println("                         ")
-			Map(p,false)
+			Map(p, false)
 		default:
-			startmenu(p,true)
+			startmenu(p, true)
 		}
 	} else {
 		endgame()

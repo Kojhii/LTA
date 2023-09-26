@@ -6,7 +6,7 @@ import (
 	"github.com/TheZoraiz/ascii-image-converter/aic_package"
 )
 
-func Map(p *gameEngine.Player,s bool) {
+func Map(p *gameEngine.Player, s bool) {
 
 	fmt.Print("\033[H\033[2J")
 
@@ -38,14 +38,14 @@ func Map(p *gameEngine.Player,s bool) {
 
 	switch imput {
 	case "4":
-		startmenu(p,false)
+		startmenu(p, false)
 	case "2":
-		Dealer(p,false)
+		Dealer(p, false)
 	case "3":
-		Workshopmenu(p,false)
+		Workshopmenu(p, false)
 	case "1":
-		commitacrimevalidation(p,false)
+		commitacrimevalidation(p, false)
 	default:
-		Map(p,true)
+		Map(p, true)
 	}
 }

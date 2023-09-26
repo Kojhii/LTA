@@ -73,3 +73,12 @@ func logocraft() {
 	myFigure := figure.NewFigure("                              Craft", "", true)
 	myFigure.Print()
 }
+
+func logocar() {
+	myFigure := figure.NewFigure("         You are taking the car", "", true)
+	myFigure.Print()
+}
+func logocrime(){
+	myFigure := figure.NewFigure("                             CRIME", "", true)
+	myFigure.Print()
+}

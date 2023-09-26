@@ -36,16 +36,16 @@ func Workshopmenu(p *gameEngine.Player, s bool) {
 
 	switch imput {
 	case "2":
-		Map(p,false)
+		Map(p, false)
 
 	case "1":
-		Workshop(p,false)
+		Workshop(p, false)
 	default:
-		Workshopmenu(p,true)
+		Workshopmenu(p, true)
 	}
 }
 
-func Workshop(p *gameEngine.Player,s bool) {
+func Workshop(p *gameEngine.Player, s bool) {
 	fmt.Print("\033[H\033[2J")
 
 	logo()
@@ -76,12 +76,12 @@ func Workshop(p *gameEngine.Player,s bool) {
 
 	switch imput {
 	case "2":
-		Map(p,false)
+		Map(p, false)
 
 	case "1":
-		Craftitem(p, true,false)
+		Craftitem(p, true, false)
 	default:
-		Workshop(p,true)
+		Workshop(p, true)
 	}
 }
 
@@ -106,13 +106,13 @@ func Craftitem(p *gameEngine.Player, donthavematerial bool, s bool) {
 			p.Inventory["molotov"] += 1
 			p.Inventory["cotton"] -= 1
 			p.Inventory["vodka"] -= 1
-			Craftitem(p, true,false)
+			Craftitem(p, true, false)
 		} else {
-			Craftitem(p, false,false)
+			Craftitem(p, false, false)
 		}
 	case "1":
-		Map(p,false)
+		Map(p, false)
 	default:
-		Craftitem(p,true,true)
+		Craftitem(p, true, true)
 	}
 }

@@ -31,13 +31,13 @@ func Statpoint(p *gameEngine.Player, s bool) {
 			switch imput {
 			case "1":
 				fmt.Print("\033[H\033[2J")
-				DisplayInfo(p,false)
+				DisplayInfo(p, false)
 			case "2":
 				fmt.Print("\033[H\033[2J")
-				startmenu(p,false)
+				startmenu(p, false)
 			default:
 				fmt.Print("\033[H\033[2J")
-				DisplayInfo(p,false)
+				DisplayInfo(p, false)
 			}
 
 		case "2":
@@ -52,18 +52,18 @@ func Statpoint(p *gameEngine.Player, s bool) {
 			switch imput {
 			case "1":
 				fmt.Print("\033[H\033[2J")
-				DisplayInfo(p,false)
+				DisplayInfo(p, false)
 			case "2":
 				fmt.Print("\033[H\033[2J")
-				startmenu(p,false)
+				startmenu(p, false)
 			default:
 				fmt.Print("\033[H\033[2J")
-				startmenu(p,false)
-		}
+				startmenu(p, false)
+			}
 		default:
 			fmt.Print("\033[H\033[2J")
-			Statpoint(p,true)
-	}
+			Statpoint(p, true)
+		}
 	} else {
 		fmt.Println("\n\n\n\n\n                                                          ____________________________________________________\n                                                         |   Little bitch , you don'y have any statpoint     |\n                                                         |        Go make some crime and come back           |\n                                                         |___________________________________________________|")
 		fmt.Println("\n\n                                                _____________________                              ___________________\n                                                |  Back to character |                             |   Back to Menu   |\n                                                |     (Press 1)      |                             |    (Press 2)     |   \n                                                |____________________|                             |__________________| \n\n\n\n\n\n   ")
@@ -72,13 +72,13 @@ func Statpoint(p *gameEngine.Player, s bool) {
 		switch imput {
 		case "1":
 			fmt.Print("\033[H\033[2J")
-			DisplayInfo(p,false)
+			DisplayInfo(p, false)
 		case "2":
 			fmt.Print("\033[H\033[2J")
-			startmenu(p,false)
+			startmenu(p, false)
 		default:
 			fmt.Print("\033[H\033[2J")
-			Statpoint(p,true)
+			Statpoint(p, true)
 		}
 
 	}

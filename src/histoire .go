@@ -19,7 +19,7 @@ func history(p *gameEngine.Player, s bool) {
 		fmt.Print("\033[H\033[2J")
 		logo()
 		choicegang(p)
-	
+
 	case "no":
 		fmt.Print("\033[H\033[2J")
 		logo()
@@ -33,8 +33,8 @@ func history(p *gameEngine.Player, s bool) {
 			fmt.Println("                                                                       [THIS IS THE GOOD SPIRIT, keep up]")
 			choicegang(p)
 		}
-		
+
 	default:
-		history(p,true)
+		history(p, true)
 	}
 }

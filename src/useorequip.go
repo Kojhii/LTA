@@ -5,7 +5,7 @@ import (
 	"github.com/Kojhii/LTA/src/gameEngine"
 )
 
-func equiporuse(p *gameEngine.Player, already bool, alcoolic bool, equiped bool,s bool) {
+func equiporuse(p *gameEngine.Player, already bool, alcoolic bool, equiped bool, s bool) {
 	fmt.Print("\033[H\033[2J")
 	logoinventory()
 	for key, value := range p.Inventory {
@@ -29,11 +29,11 @@ func equiporuse(p *gameEngine.Player, already bool, alcoolic bool, equiped bool,
 
 	switch imput {
 	case "1":
-		startmenu(p,false)
+		startmenu(p, false)
 
 	case "vest":
 		if p.Armorequiped == "vest" {
-			equiporuse(p, false, true, true,false)
+			equiporuse(p, false, true, true, false)
 		} else {
 			p.Armorequiped = "vest"
 			p.Armor = 10
@@ -45,24 +45,24 @@ func equiporuse(p *gameEngine.Player, already bool, alcoolic bool, equiped bool,
 				p.Hp = p.MaxHP
 			}
 			p.Inventory["soda(give 10 health)"] -= 1
-			equiporuse(p, true, true, false,false)
+			equiporuse(p, true, true, false, false)
 		} else {
-			equiporuse(p, false, true, true,false)
+			equiporuse(p, false, true, true, false)
 		}
 
 	case "vodka":
-		equiporuse(p, true, false, true,false)
+		equiporuse(p, true, false, true, false)
 	case "cotton":
-		equiporuse(p, false, true, true,false)
+		equiporuse(p, false, true, true, false)
 	case "molotov":
-		equiporuse(p, false, true, true,false)
+		equiporuse(p, false, true, true, false)
 	case "knife":
 		p.Weapon = "knife(+10)"
-		equiporuse(p, true, true, false,false)
+		equiporuse(p, true, true, false, false)
 	case "glock":
 		p.Weapon = "glock(+20)"
-		equiporuse(p, true, true, false,false)
+		equiporuse(p, true, true, false, false)
 	default:
-		equiporuse(p,true,true,true,true)
+		equiporuse(p, true, true, true, true)
 	}
 }
