@@ -58,9 +58,11 @@ func equiporuse(p *gameEngine.Player, already bool, alcoolic bool, equiped bool,
 		equiporuse(p, false, true, true, false)
 	case "knife":
 		p.Weapon = "knife(+10)"
+		p.WeaponDamage = 10
 		equiporuse(p, true, true, false, false)
 	case "glock":
 		p.Weapon = "glock(+20)"
+		p.WeaponDamage = 20
 		equiporuse(p, true, true, false, false)
 	default:
 		equiporuse(p, true, true, true, true)

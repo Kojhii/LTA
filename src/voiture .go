@@ -9,7 +9,7 @@ import (
 
 func voiture(p *gameEngine.Player) {
 	fmt.Print("\033[H\033[2J")
-	
+
 	filePath := "9.jpg"
 	flags := aic_package.DefaultFlags()
 	flags.Dimensions = []int{180, 40}
@@ -27,16 +27,17 @@ func voiture(p *gameEngine.Player) {
 	time.Sleep(2 * time.Second)
 	crimevoiture(p)
 }
-	
 
 func crimevoiture(p *gameEngine.Player) {
 	var cop gameEngine.Ennemy
-	cop.Inito(20,20,2,"Cop",10,map[string]int{},4,15)
+	var gangster gameEngine.Ennemy
+	cop.Inito(20, 20, 1, "Cop", 10, map[string]int{}, 4, 15)
+	gangster.Inito(40, 40, 1, "Cop", 15, map[string]int{}, 8, 25)
+	
 	fmt.Print("\033[H\033[2J")
 	logocrime()
 	fmt.Println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                    _____________________________________________________\n                                                    |        wow you exceeded the speed limit            |\n                                                    |        A cop is trying to arrest you, KILL HIM     |\n                                                    |____________________________________________________|\n\n\n   ")
 	time.Sleep(3 * time.Second)
-	combat(p,&cop)
+	combat(p, &cop)
 
 }
-

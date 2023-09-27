@@ -8,7 +8,7 @@ import (
 
 func main() {
 	var p gameEngine.Player
-	p.Init("sam", "zero", 0, 0, 0, 0, 0, 0, map[string]int{}, 0, "punch", "nothing")
+	p.Init("sam", "zero", 0, 0, 0, 0, 0, 0, map[string]int{}, 0, "punch", "nothing", 0,0)
 	logo()
 	fmt.Println("                                                                             Start ?                 ")
 	fmt.Println("                                                                             Press yes...           ")

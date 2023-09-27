@@ -78,11 +78,26 @@ func logocar() {
 	myFigure := figure.NewFigure("         You are taking the car", "", true)
 	myFigure.Print()
 }
-func logocrime(){
+func logocrime() {
 	myFigure := figure.NewFigure("                             CRIME", "", true)
 	myFigure.Print()
 }
-func logofight(){
-	myFigure := figure.NewFigure("                             FIGHT", "", true)
+func logofight() {
+	myFigure := figure.NewFigure("                               FIGHT", "", true)
 	myFigure.Print()
 }
+func logoWIN() {
+	myFigure := figure.NewFigure("                                   WIN", "", true)
+	myFigure.Print()
+}
+
+func logoDEATH() {
+	myFigure := figure.NewFigure("                             DEATH", "", true)
+	myFigure.Print()
+}
+
+func logolevelup() {
+	myFigure := figure.NewFigure("                             LEVEL UP", "", true)
+	myFigure.Print()
+}
+

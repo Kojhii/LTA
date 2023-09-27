@@ -18,6 +18,7 @@ func equipeornotknife(p *gameEngine.Player, s bool) {
 	switch imput {
 	case "yes":
 		p.Weapon = "Knife(+10)"
+		p.WeaponDamage = 10
 		Shop(p, true, true, false)
 	case "no":
 		Shop(p, true, true, false)
@@ -37,7 +38,8 @@ func equipeornotglock(p *gameEngine.Player, s bool) {
 
 	switch imput {
 	case "yes":
-		p.Weapon = "Glock(+30)"
+		p.Weapon = "Glock(+20)"
+		p.WeaponDamage = 20
 		Shop(p, true, true, false)
 	case "no":
 		Shop(p, true, true, false)

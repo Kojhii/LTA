@@ -13,11 +13,13 @@ type Player struct {
 	Money int
 	Weapon string
 	Armorequiped string
+	WeaponDamage int
+	Levelbar int
 }
 
 
 
-func (p *Player) Init(Name string, Gang string, Level int, MaxHP int, Hp int, Damage int,Statpoint int,Armor int, Inventory map[string]int,Money int,Weapon string,Armoreequiped string) {
+func (p *Player) Init(Name string, Gang string, Level int, MaxHP int, Hp int, Damage int,Statpoint int,Armor int, Inventory map[string]int,Money int,Weapon string,Armoreequiped string,WeaponDamage int,Levelbar int) {
     p.Name = Name
     p.Gang = Gang
     p.Level = Level
@@ -30,6 +32,8 @@ func (p *Player) Init(Name string, Gang string, Level int, MaxHP int, Hp int, Da
 	p.Money = Money
 	p.Weapon = Weapon
 	p.Armorequiped = Armoreequiped
+	p.WeaponDamage = WeaponDamage
+	p.Levelbar = Levelbar
 
 }
 
