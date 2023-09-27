@@ -82,3 +82,7 @@ func logocrime(){
 	myFigure := figure.NewFigure("                             CRIME", "", true)
 	myFigure.Print()
 }
+func logofight(){
+	myFigure := figure.NewFigure("                             FIGHT", "", true)
+	myFigure.Print()
+}
