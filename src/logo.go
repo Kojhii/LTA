@@ -92,7 +92,7 @@ func logoWIN() {
 }
 
 func logoDEATH() {
-	myFigure := figure.NewFigure("                             DEATH", "", true)
+	myFigure := figure.NewFigure("                             LOOSER...", "", true)
 	myFigure.Print()
 }
 
@@ -101,3 +101,7 @@ func logolevelup() {
 	myFigure.Print()
 }
 
+func logowalk() {
+	myFigure := figure.NewFigure("                             Walking...", "", true)
+	myFigure.Print()
+}

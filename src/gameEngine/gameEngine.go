@@ -46,9 +46,10 @@ type Ennemy struct {
 	Inventory map[string]int
 	Armor int
 	Money int
+	XP int
 	
 }
-func (g *Ennemy) Inito(Hp int,MaxHP int,Level int,Name string,Damage int,Inventory map[string]int,Armor int, Money int ){
+func (g *Ennemy) Inito(Hp int,MaxHP int,Level int,Name string,Damage int,Inventory map[string]int,Armor int, Money int,XP int ){
 	g.Name = Name
 	g.Hp = Hp 
 	g.MaxHP = MaxHP
@@ -57,4 +58,5 @@ func (g *Ennemy) Inito(Hp int,MaxHP int,Level int,Name string,Damage int,Invento
 	g.Inventory = Inventory
 	g.Armor = Armor
 	g.Money = Money
+	g.XP = XP
 }

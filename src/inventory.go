@@ -6,7 +6,7 @@ import (
 	"github.com/TheZoraiz/ascii-image-converter/aic_package"
 )
 
-func Inventoryentrée(p *gameEngine.Player, s bool) {
+func Inventoryentry(p *gameEngine.Player, s bool) {
 	fmt.Print("\033[H\033[2J")
 
 	logo()
@@ -40,7 +40,7 @@ func Inventoryentrée(p *gameEngine.Player, s bool) {
 	case "1":
 		Inventory(p, false)
 	default:
-		Inventoryentrée(p, true)
+		Inventoryentry(p, true)
 	}
 }
 func Inventory(p *gameEngine.Player, s bool) {

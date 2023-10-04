@@ -36,7 +36,7 @@ func commitacrimevalidation(p *gameEngine.Player, s bool) {
 
 	switch imput {
 	case "2":
-
+		Walk(p)
 	case "1":
 		voiture(p)
 	default:

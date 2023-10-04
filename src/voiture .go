@@ -12,7 +12,7 @@ func voiture(p *gameEngine.Player) {
 
 	filePath := "9.jpg"
 	flags := aic_package.DefaultFlags()
-	flags.Dimensions = []int{180, 40}
+	flags.Dimensions = []int{180, 38}
 	flags.Colored = true
 	flags.Braille = true
 	flags.CustomMap = " .-=+#@"
@@ -30,10 +30,8 @@ func voiture(p *gameEngine.Player) {
 
 func crimevoiture(p *gameEngine.Player) {
 	var cop gameEngine.Ennemy
-	var gangster gameEngine.Ennemy
-	cop.Inito(20, 20, 1, "Cop", 10, map[string]int{}, 4, 15)
-	gangster.Inito(40, 40, 1, "Cop", 15, map[string]int{}, 8, 25)
-	
+	cop.Inito(20, 20, 1, "Cop", 10, map[string]int{}, 4, 15,15)
+
 	fmt.Print("\033[H\033[2J")
 	logocrime()
 	fmt.Println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                    _____________________________________________________\n                                                    |        wow you exceeded the speed limit            |\n                                                    |        A cop is trying to arrest you, KILL HIM     |\n                                                    |____________________________________________________|\n\n\n   ")

@@ -7,7 +7,7 @@ import (
 
 func choicegang(p *gameEngine.Player) {
 
-	crips := "|              THE CRIPS                       |\n|This organization often                       |\n|engages in robbery illegal                    |\n|drug trafficking and                          |\n|other criminal activities.                    |                                           [Press 1 to be a fucking Crips bro] \n|This gang is in deep conflict with the Bloods | \n|HP : 15                                       |\n|damage : 12                                   |\n|______________________________________________|"
+	crips := "|              THE CRIPS                       |\n|This organization often                       |\n|engages in robbery illegal                    |\n|drug trafficking and                          |\n|other criminal activities.                    |                                           [Press 1 to be a fucking Crips bro] \n|This gang is in deep conflict with the Bloods | \n|HP : 30                                       |\n|damage : 12                                   |\n|______________________________________________|"
 
 	bloods := "|              The BLOODS                      |\n|Street gang                                   |\n|involved in drugs, theft, and murder          |\n|other criminal activities                     |\n|This gang is in deep conflict with the Crips  |                                           [Press 2 to be a Bloods , the rival of the crips]\n|HP : 32                                       |\n|damage : 10                                   |\n|______________________________________________|"
 
@@ -37,19 +37,19 @@ func choicegang(p *gameEngine.Player) {
 		case "1":
 			fmt.Print("\033[H\033[2J")
 			println("                                        [Good luck on your adventure bro  , the future of the crips's gang is in your hands]   ")
-			p.Init("Sam", "Crips", 1, 30, 30, 12, 1, 3, map[string]int{"vest (+3 armor)": 1}, 40, "punch(+00)", "vest", 0,0)
+			p.Init("Sam", "Crips", 1, 30, 30, 12, 1, 3, map[string]int{"vest (+3 armor)": 1}, 40, "punch(+00)", "vest", 0, 0)
 			startmenu(p, false)
 
 		case "2":
 			fmt.Print("\033[H\033[2J")
 			println("                                        [Good luck on your adventure bro ,the future of the bloods's gang is in your hands]     ")
-			p.Init("Sam", "Bloods", 1, 32, 32, 10, 1, 3, map[string]int{"vest (+3 armor) ": 1}, 40, "punch(+00)", "vest", 0,0)
+			p.Init("Sam", "Bloods", 1, 32, 32, 10, 1, 3, map[string]int{"vest (+3 armor) ": 1}, 40, "punch(+00)", "vest", 0, 0)
 			startmenu(p, false)
 
 		case "3":
 			fmt.Print("\033[H\033[2J")
 			println("                                        [Good luck on your adventure bro , the future of the latinos's gang is in your hands]     ")
-			p.Init("Sam", "Latinos", 1, 28, 28, 14, 1, 3, map[string]int{"vest (+3 armor) ": 1}, 40, "punch(+00)", "vest", 0,0)
+			p.Init("Sam", "Latinos", 1, 28, 28, 14, 1, 3, map[string]int{"vest (+3 armor) ": 1}, 40, "punch(+00)", "vest", 0, 0)
 			startmenu(p, false)
 
 		}
