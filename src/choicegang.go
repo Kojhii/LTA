@@ -6,7 +6,7 @@ import (
 )
 
 func choicegang(p *gameEngine.Player) {
-
+	//creation des 3 gang (string)
 	crips := "|              THE CRIPS                       |\n|This organization often                       |\n|engages in robbery illegal                    |\n|drug trafficking and                          |\n|other criminal activities.                    |                                           [Press 1 to be a fucking Crips bro] \n|This gang is in deep conflict with the Bloods | \n|HP : 30                                       |\n|damage : 12                                   |\n|______________________________________________|"
 
 	bloods := "|              The BLOODS                      |\n|Street gang                                   |\n|involved in drugs, theft, and murder          |\n|other criminal activities                     |\n|This gang is in deep conflict with the Crips  |                                           [Press 2 to be a Bloods , the rival of the crips]\n|HP : 32                                       |\n|damage : 10                                   |\n|______________________________________________|"
@@ -21,6 +21,7 @@ func choicegang(p *gameEngine.Player) {
 
 	switch choice {
 	default:
+		// creation des 3 tableau pour les gang
 		fmt.Print("\033[H\033[2J")
 
 		fmt.Println("\n\n\n_______________________________________________")
@@ -34,6 +35,7 @@ func choicegang(p *gameEngine.Player) {
 		fmt.Scan(&sndchoice)
 
 		switch sndchoice {
+			// initialisation differente par rapport au gang choise => stat differente
 		case "1":
 			fmt.Print("\033[H\033[2J")
 			println("                                        [Good luck on your adventure bro  , the future of the crips's gang is in your hands]   ")

@@ -5,16 +5,12 @@ import (
 
 	"github.com/Kojhii/LTA/src/gameEngine"
 )
-
+//differentes fonction pour print des loogo
 func logo() {
 	myFigure := figure.NewFigure("                Little Theft Auto ", "", true)
 	myFigure.Print()
 }
 
-func logo2() {
-	myFigure := figure.NewFigure("Virginie ", "", true)
-	myFigure.Print()
-}
 func logo3() {
 	myFigure := figure.NewFigure("           THANKS FOR PLAYING ", "", true)
 	myFigure.Print()

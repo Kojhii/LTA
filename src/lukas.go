@@ -6,6 +6,7 @@ import (
 )
 
 func Lukas() {
+	//easter egg avec lukas, n'en parlons pas
 	filePath := "8.jpeg"
 	flags := aic_package.DefaultFlags()
 	flags.Braille = true

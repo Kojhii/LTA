@@ -9,7 +9,7 @@ import (
 
 func voiture(p *gameEngine.Player) {
 	fmt.Print("\033[H\033[2J")
-
+	//converstion et affichage de l'image de la voiture
 	filePath := "9.jpg"
 	flags := aic_package.DefaultFlags()
 	flags.Dimensions = []int{180, 38}
@@ -29,6 +29,7 @@ func voiture(p *gameEngine.Player) {
 }
 
 func crimevoiture(p *gameEngine.Player) {
+	//init de l'ennemie (policier)
 	var cop gameEngine.Ennemy
 	cop.Inito(20, 20, 1, "Cop", 10, map[string]int{}, 4, 15,15)
 

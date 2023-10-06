@@ -12,7 +12,7 @@ func commitacrimevalidation(p *gameEngine.Player, s bool) {
 	logo()
 
 	fmt.Println("\n ")
-
+	//importation de l'image
 	filePath := "7.jpg"
 	flags := aic_package.DefaultFlags()
 	flags.Braille = true
@@ -25,12 +25,15 @@ func commitacrimevalidation(p *gameEngine.Player, s bool) {
 		fmt.Println(err)
 	}
 	fmt.Printf("%v\n", asciiArt)
+
+	//print du tableau
 	fmt.Println("\n\n                                                _____________________                              ___________________\n                                                |    Take the car    |                             |      Walk        |\n                                                |     (Press 1)      |                             |    (Press 2)     |   \n                                                |____________________|                             |__________________| \n\n\n\n\n\n   ")
 
+	//si jamais mauvais imput
 	if s {
 		fmt.Println("                                                                           [BAD IMPUT BRO]")
 	}
-
+	//scan de l'imput et redirection vers l'option choisi
 	var imput string
 	fmt.Scan(&imput)
 

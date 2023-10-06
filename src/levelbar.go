@@ -2,6 +2,7 @@ package main
 
 import "github.com/Kojhii/LTA/src/gameEngine"
 
+//fonction pour associer le niveau du joueur en rapport avec avec la barre d'xp
 func Levelbar(p *gameEngine.Player) {
 	if p.Levelbar == 0 {
 		p.Level = 1

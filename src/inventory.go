@@ -11,6 +11,7 @@ func Inventoryentry(p *gameEngine.Player, s bool) {
 
 	logo()
 
+	//conversation de la photo et affichage
 	fmt.Println("\n\n ")
 	filePath := "6.jpeg"
 	flags := aic_package.DefaultFlags()
@@ -27,9 +28,11 @@ func Inventoryentry(p *gameEngine.Player, s bool) {
 
 	fmt.Printf("%v\n", asciiArt)
 	fmt.Println("\n\n                                                _____________________                              ___________________\n                                                |       Enter        |                             |   Back to MAP    |\n                                                |     (Press 1)      |                             |    (Press 2)     |   \n                                                |____________________|                             |__________________| \n\n\n\n\n\n   ")
+	//si mauvais imput
 	if s {
 		fmt.Println("                                                                           [BAD IMPUT BRO]")
 	}
+	//scan de l'imput et lancement de la prochaine fonction (en rapport au choix)
 	var imput string
 	fmt.Scan(&imput)
 
@@ -46,15 +49,19 @@ func Inventoryentry(p *gameEngine.Player, s bool) {
 func Inventory(p *gameEngine.Player, s bool) {
 	fmt.Print("\033[H\033[2J")
 	logoinventory()
+
+	//print de l'inventaire
 	for key, value := range p.Inventory {
 		fmt.Println("\n\n                                                                ", key, ":", value)
 	}
+	//print des tableau avec choix
 	fmt.Println("\n\n                                           _____________________                              ___________________\n                                           |  Use / Equip item  |                             |   Back to Menu   |\n                                           |     (Press 1)      |                             |    (Press 2)     |   \n                                           |____________________|                             |__________________| \n\n\n\n\n\n   ")
 	if s {
 		fmt.Println("                                                                           [BAD IMPUT BRO]")
 	}
 	var imput string
 	fmt.Scanln(&imput)
+	
 	switch imput {
 	case "2":
 		fmt.Print("\033[H\033[2J")

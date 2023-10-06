@@ -13,10 +13,12 @@ func Win(p *gameEngine.Player, cop *gameEngine.Ennemy) {
 	fmt.Println("                                                                         [     YOU JUST WIN     ]             ")
 	fmt.Println("\n\n\n\n\n                                                         ____________________________________________________\n                                                         |                 +", cop.Money, "money                        |\n                                                         |                 + ",cop.XP," xp                         |\n                                                         |           You are going back to the map           |\n                                                         |___________________________________________________|")
 	time.Sleep(4 * time.Second)
+	//on gagne l'argent et l'xp de l'ennemie
 	p.Money = p.Money + cop.Money
 	preclevel := p.Level
 	p.Levelbar += cop.XP
 	Levelbar(p)
+	//si on a gagné un niveau
 	if preclevel <= p.Level {
 		fmt.Print("\033[H\033[2J")
 		logolevelup()
@@ -27,6 +29,7 @@ func Win(p *gameEngine.Player, cop *gameEngine.Ennemy) {
 	Map(p, false)
 }
 func Death(p *gameEngine.Player) {
+	//si on perd on respawn avec la moitié de notre vie
 	fmt.Print("\033[H\033[2J")
 	logoDEATH()
 	fmt.Println("\n\n\n\n\n                                                         ____________________________________________________\n                                                         |             You are at the hospital               |\n                                                         |     You will respawn with 50 % of your hp         |\n                                                         |           You are going back to the map           |\n                                                         |___________________________________________________|")

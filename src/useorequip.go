@@ -8,19 +8,24 @@ import (
 func equiporuse(p *gameEngine.Player, already bool, alcoolic bool, equiped bool, s bool) {
 	fmt.Print("\033[H\033[2J")
 	logoinventory()
+	//print de 'linventaire
 	for key, value := range p.Inventory {
 		fmt.Println("\n\n                                                                ", key, ":", value)
 	}
 	fmt.Println("\n                                                            [PUT THE NAME OF THE OBJECT YOU WANT TO USE] \n\n                                                                         ___________________\n                                                                        |   Back to Menu   |\n                                                                        |    (Press 1)     |   \n                                                                        |__________________| \n\n\n   ")
+	//si deja equipé
 	if !already {
 		fmt.Println("                                                             [ OBJECT ALREADY EQUIPED /Can't be used]")
 	}
+	//si on utilise la vodka
 	if !alcoolic {
 		fmt.Println("                                                             [ Are you  fucking alcoholic bro ? ]")
 	}
+	//si on l'equipe
 	if !equiped {
 		fmt.Println("                                                              [        Object equiped /used     ]")
 	}
+	// si mauvais imput
 	if s {
 		fmt.Println("                                                                           [BAD IMPUT BRO]")
 	}

@@ -11,7 +11,7 @@ import (
 
 func Walk(p *gameEngine.Player) {
 	fmt.Print("\033[H\033[2J")
-
+	//conversion et affichage de l'image
 	filePath := "10.webp"
 	flags := aic_package.DefaultFlags()
 	flags.Dimensions = []int{180, 40}
@@ -31,6 +31,7 @@ func Walk(p *gameEngine.Player) {
 }
 
 func Crimewalk(p *gameEngine.Player) {
+	//init du gangster
 	var gangster gameEngine.Ennemy
 	gangster.Inito(40, 40, 3, "Gangster", 15, map[string]int{}, 8, 25,25)
 

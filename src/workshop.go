@@ -88,11 +88,14 @@ func Workshop(p *gameEngine.Player, s bool) {
 func Craftitem(p *gameEngine.Player, donthavematerial bool, s bool) {
 	fmt.Print("\033[H\033[2J")
 	logocraft()
+
 	fmt.Println("\n                                                          [PRESS THE NAME OF WHAT YOU WANT TO CRAFT]\n                                                        _______________________________________________\n                                                       |    Objet :       Material :        STOCK :   |\n                                                       | molotov(-20 armor)    vodka+cotton      ", p.Inventory["molotov"], "  |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              | \n                                                       |                                              |\n                                                       |                                              |\n                                                       |                                              |\n                                                       |______________________________________________| \n\n ")
 	fmt.Println("\n\n                                                                     ___________________\n                                                                    |   Back to Menu   |\n                                                                    |    (Press 1)     |   \n                                                                    |__________________| \n\n\n   ")
+	//si on a pas le materiel
 	if !donthavematerial {
 		fmt.Println("                                                         [You don't have the material required bro]")
 	}
+	//si mauvais imput
 	if s {
 		fmt.Println("                                                                           [BAD IMPUT BRO]")
 	}
@@ -102,7 +105,9 @@ func Craftitem(p *gameEngine.Player, donthavematerial bool, s bool) {
 
 	switch imput {
 	case "molotov":
+		//si on a le materiel
 		if p.Inventory["cotton"] > 0 || p.Inventory["vodka"] > 0 {
+			// on perd le materiel et gagne le produit
 			p.Inventory["molotov"] += 1
 			p.Inventory["cotton"] -= 1
 			p.Inventory["vodka"] -= 1

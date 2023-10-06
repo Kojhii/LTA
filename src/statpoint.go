@@ -8,9 +8,12 @@ import (
 
 func Statpoint(p *gameEngine.Player, s bool) {
 	logostatpoint()
+	//si jamais on a des statpoint
 	if p.Statpoint > 0 {
+		//choix entre les deux stat , degat et vie
 		fmt.Println("\n\n\n\n                                                         _____________________________________________________\n                                                         |   In which stat do you want to put a statpoint ?   |\n                                                         |                    [HP | DAMAGE]                   |\n                                                         |____________________________________________________|\n\n\n\n\n   ")
 		fmt.Println("                                                _____________________                              ___________________\n                                                |     Put in HP      |                             |   Put in Damage  |\n                                                |     (Press 1)      |                             |    (Press 2)     |   \n                                                |____________________|                             |__________________| \n\n   ")
+		//si mauvais imput
 		if s {
 			fmt.Println("                                                                           [BAD IMPUT BRO]")
 		}
@@ -18,6 +21,7 @@ func Statpoint(p *gameEngine.Player, s bool) {
 		fmt.Scan(&imput)
 
 		switch imput {
+		//si  vie , vie =+1
 		case "1":
 			fmt.Print("\033[H\033[2J")
 			logostatpoint()
@@ -39,7 +43,7 @@ func Statpoint(p *gameEngine.Player, s bool) {
 				fmt.Print("\033[H\033[2J")
 				DisplayInfo(p, false)
 			}
-
+		//si degat +1
 		case "2":
 			fmt.Print("\033[H\033[2J")
 			logostatpoint()
@@ -65,6 +69,7 @@ func Statpoint(p *gameEngine.Player, s bool) {
 			Statpoint(p, true)
 		}
 	} else {
+		//si pas de statpoint
 		fmt.Println("\n\n\n\n\n                                                          ____________________________________________________\n                                                         |   Little bitch , you don'y have any statpoint     |\n                                                         |        Go make some crime and come back           |\n                                                         |___________________________________________________|")
 		fmt.Println("\n\n                                                _____________________                              ___________________\n                                                |  Back to character |                             |   Back to Menu   |\n                                                |     (Press 1)      |                             |    (Press 2)     |   \n                                                |____________________|                             |__________________| \n\n\n\n\n\n   ")
 		var imput string

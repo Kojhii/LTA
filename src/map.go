@@ -7,13 +7,12 @@ import (
 )
 
 func Map(p *gameEngine.Player, s bool) {
-
 	fmt.Print("\033[H\033[2J")
 
 	logo()
 
 	fmt.Println("\n ")
-
+	//conversation et affichage de la map
 	filePath := "1.jpeg"
 	flags := aic_package.DefaultFlags()
 	flags.Braille = true
@@ -27,15 +26,17 @@ func Map(p *gameEngine.Player, s bool) {
 	}
 
 	fmt.Printf("%v\n", asciiArt)
+	//4 tableau avec differente option
 	fmt.Println("                          _____________________                    ___________________                     __________________                    __________________\n                          |  Commit a crime    |                   |   Go to dealer   |                   |    Workshop     |                    |   Go to menu    |\n                          |     (Press 1)      |                   |    (Press 2)     |                   |    (Press 3)    |                    |    (Press 4)    |   \n                          |____________________|                   |__________________|                   |_________________|                    |_________________| \n\n\n\n   ")
 
+	//si mauvais imput
 	if s {
 		fmt.Println("                                                                           [BAD IMPUT BRO]")
 	}
-
+	//Scan de l'imput 
 	var imput string
 	fmt.Scan(&imput)
-
+	//Redirection en fonction de l'imput
 	switch imput {
 	case "4":
 		startmenu(p, false)
